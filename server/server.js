@@ -7,7 +7,7 @@ const PORT = 5000; // declare PORT for server to listen
 
 // import routers
 const taskRouter = require('./routers/task.router.js');
-app.use('/task', taskRouter); // router for /task route
+app.use('/tasks', taskRouter); // router for /task route
 
 //app.use(bodyParser.urlencoded({extended: true})); // need to handle data from client
 
