@@ -1,10 +1,20 @@
+// import express module
 const express = require('express');
-const app = express();
-const PORT = 5000;
+const app = express(); // declare app and set to express application
+const PORT = 5000; // declare PORT for server to listen
+
+// import pool module
+const pool = require ('./modules/pool.js')
+
+// import routers
+const taskRouter = require('./routers/task.router.js');
+app.use('/task', taskRouter); // router for /task route
 
 //app.use(bodyParser.urlencoded({extended: true})); // need to handle data from client
 
-app.use(express.static('server/public')); // imports static files from public folder
+// import static files from public folder
+app.use(express.static('server/public'));
+
 
 app.listen(PORT, () => {
     console.log('Running on port', PORT);
