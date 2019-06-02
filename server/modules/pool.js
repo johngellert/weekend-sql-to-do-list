@@ -4,7 +4,7 @@ const Pool = pg.Pool; // Pool is a constructor for a class. creating a pool of c
 const config = {
     database: "todo_list",
     host: "localhost",
-    port: "5432",
+    port: 5432,
 };
 
 // declare new pool configuration
