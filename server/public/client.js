@@ -3,26 +3,40 @@ $(document).ready(readyNow);
 function readyNow(){
     $('#add-task').on('click', handleClickAddTask);
     $('#todo-list').on('click', '.complete-button', handleClickCompleteTask);
-    handleClickAddTask();
+    getTodoList();
 }
 
-function handleClickAddTask () {
-    console.log("add");
+function getTodoList () {
     $.ajax({
         method: 'GET',
-        url: '/tasks',
+        url: '/tasks'
     }).then( (response) => {
         $('#todo-list').empty();
         response.forEach(task => {
             $('#todo-list').append(`
                 <tr>
                     <td>${task.task}</td>
-                    <td>${task.priority}t</td>
-                    <td><button class="complete-button">Complete</button></td>
+                    <td>${task.priority}</td>
+                    <td><button class="complete-button" data-id="${task.cid}">Complete</button></td>
                 </tr>
             `);
 
         });
+    });
+}
+
+function handleClickAddTask () {
+    const newTask = {
+        task: $('#task').val(),
+        priority: $('#priority').val()
+    }
+
+    $.ajax({
+        method: 'POST',
+        url: '/tasks',
+        data: newTask
+    }).then( () => {
+        getTodoList();
     });
 }
 
