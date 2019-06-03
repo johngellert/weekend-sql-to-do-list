@@ -60,6 +60,13 @@ th, tr {
     font-size: large;
 }
 
+.delete-button {
+    width: 75px;
+    height: 25px;
+    font-size: large;
+    background-color: lightcoral;
+}
+
 #task {
     width: 400px;
     height: 25px;
