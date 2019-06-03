@@ -24,6 +24,9 @@ function getTodoList() {
                         <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                     </tr>
                 `);
+                if(task.is_complete === true){
+                    $('.complete-button').remove();
+                }
             }
             else if (task.priority === 'Not urgent, important') {
                 $('#todo-list').append(`
@@ -34,6 +37,9 @@ function getTodoList() {
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
+                if(task.is_complete === true){
+                    $('.complete-button').remove();
+                }
             }
             else if (task.priority === 'Urgent, not important') {
                 $('#todo-list').append(`
@@ -44,6 +50,9 @@ function getTodoList() {
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
+                if(task.is_complete === true){
+                    $('.complete-button').remove();
+                }
             }
             else if (task.priority === 'Not urgent, not important') {
                 $('#todo-list').append(`
@@ -54,6 +63,9 @@ function getTodoList() {
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
+                if(task.is_complete === true){
+                    $('.complete-button').remove();
+                }
             }
         });
     });
