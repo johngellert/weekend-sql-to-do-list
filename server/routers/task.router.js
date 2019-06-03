@@ -6,22 +6,32 @@ router.use(bodyParser.urlencoded({extended: true})); // need to handle data from
 
 
 router.get('/', (req, res) => {
-    pool.query('SELECT * FROM "todo";').
+    pool.query('SELECT * FROM "todo" ORDER BY "id";').
     then((result) => {
         res.send(result.rows);
     }).catch((error) => {
         console.log('Error with SELECT todo query', error);
-        res.sendStatus(500)
+        res.sendStatus(500);
     });
 });
 
 router.post('/', (req, res) => {
     pool.query('INSERT INTO "todo" ("task", "priority") VALUES ($1, $2);', [req.body.task, req.body.priority]).
     then(() => {
-        res.sendStatus(201);
+        res.sendStatus(201); // send status created
     }).catch((error) => {
         console.log('Error with INSERT todo query', error);
-        res.sendStatus(500)
+        res.sendStatus(500);
+    });
+});
+
+router.put('/:id', (req, res) => {
+    pool.query('UPDATE "todo" SET "is_complete"=true WHERE "id"=$1;', [req.params.id]).
+    then(() => {
+        res.sendStatus(200); // send status ok
+    }).catch((error) => {
+        console.log('Error with UPDATE todo query', error);
+        res.sendStatus(500);
     });
 });
 

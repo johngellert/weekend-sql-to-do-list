@@ -9,10 +9,18 @@ table {
     border: 1px solid black;
 }
 
+.task-complete {
+    background-color: gray;
+    width: 200px;
+    text-align: left;
+}
+
 th, tr {
     width: 200px;
     text-align: left;
 }
+
+
 
 #task-list-container {
     width: 800px;
