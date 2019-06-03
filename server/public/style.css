@@ -1,13 +1,73 @@
 body {
-    background-color: lightyellow
+    background-color: lightyellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* width: 800px;
+    margin: 0 auto; */
 }
 
 table {
     border: 1px solid black;
 }
 
-
 th, tr {
     width: 200px;
     text-align: left;
 }
+
+#task-list-container {
+    width: 800px;
+}
+
+/* align text in div to center */
+.task-container {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    height: 50px;
+    font-size: larger;
+    background-color: lightgreen; 
+    /* position: absolute; */
+}
+
+/*  */
+.task-item {
+    /* border: 1px solid black; */
+    width: 300px;
+    height: 25px;
+    padding-left: 10px;
+}
+
+#task-complete {
+    /* border: 1px solid black; */
+    width: 100px;
+    height: 25px;
+    padding-left: 0px;
+    margin-right: 10px; 
+}
+
+.complete-button {
+    width: 100px;
+    height: 25px;
+    font-size: large;
+}
+
+#task {
+    width: 400px;
+    height: 25px;
+    font-size: larger;
+    padding-left: 10px;
+}
+
+#priority {
+    width: 200px;
+    height: 25px;
+    font-size: larger;
+    padding-left: 10px;
+}
+
+
+
+
+
+
