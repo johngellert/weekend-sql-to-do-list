@@ -55,18 +55,6 @@ function getTodoList() {
                 </tr>
                 `);
             }
-
-            if (task.is_complete === true) {
-                $('#todo-list').append(`
-                    <tr class="row-complete">
-                        <td>${task.task}</td>
-                        <td>${task.priority}</td>
-                        <td></td>
-                        <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
-                    </tr>
-                `);
-            }
-
         });
     });
 }
