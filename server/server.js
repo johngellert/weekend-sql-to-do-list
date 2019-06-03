@@ -1,7 +1,7 @@
 // import express module
 const express = require('express');
 const app = express(); // declare app and set to express application
-const PORT = 5000; // declare PORT for server to listen
+const PORT = process.env.PORT || 5000; // declare PORT for server to listen
 
 // import routers
 const taskRouter = require('./routers/task.router.js');
