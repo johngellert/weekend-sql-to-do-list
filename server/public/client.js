@@ -17,55 +17,44 @@ function getTodoList() {
             
             if (task.priority === 'Urgent, important') {
                 $('#todo-list').append(`
-                    <tr class="row-ui"> 
+                    <tr id="row-ui"> 
                         <td>${task.task}</td>
                         <td>${task.priority}</td>
                         <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                         <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                     </tr>
                 `);
-                if(task.is_complete === true){
-                    $('.complete-button').remove();
-                }
+
             }
             else if (task.priority === 'Not urgent, important') {
                 $('#todo-list').append(`
-                <tr class="row-nui"> 
+                <tr id="row-nui"> 
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
                     <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
-                if(task.is_complete === true){
-                    $('.complete-button').remove();
-                }
             }
             else if (task.priority === 'Urgent, not important') {
                 $('#todo-list').append(`
-                <tr class="row-uni"> 
+                <tr id="row-uni"> 
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
                     <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
-                if(task.is_complete === true){
-                    $('.complete-button').remove();
-                }
             }
             else if (task.priority === 'Not urgent, not important') {
                 $('#todo-list').append(`
-                <tr class="row-nuni"> 
+                <tr id="row-nuni"> 
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
                     <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
-                if(task.is_complete === true){
-                    $('.complete-button').remove();
-                }
             }
         });
     });

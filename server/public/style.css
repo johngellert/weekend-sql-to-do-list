@@ -11,25 +11,25 @@ body {
     opacity: .2;
 }
 
-.row-ui {
-    background-color: red;
+#row-ui {
+    background-color: rgb(255, 93, 93);
     width: 250px;
     text-align: left;
 }
 
-.row-nui {
-    background-color: yellow;
+#row-nui {
+    background-color: rgb(253, 253, 116);
     width: 250px;
     text-align: left;
 }
 
-.row-uni {
-    background-color : green;
+#row-uni {
+    background-color: rgb(78, 224, 78);
     width: 250px;
     text-align: left;
 }
 
-.row-nuni {
+#row-nuni {
     background-color: lightgray;
     width: 250px;
     text-align: left;
@@ -75,12 +75,12 @@ th, tr {
     padding-left: 10px;
 }
 
-#add-task {
+/* #add-task {
     width: 100px;
     height: 25px;
     font-size: large;
     background-color: lightgreen;
-}
+} */
 
 
 
