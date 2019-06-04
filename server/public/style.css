@@ -18,13 +18,13 @@ body {
 }
 
 #row-nui {
-    background-color: rgb(253, 253, 116);
+    background-color: rgb(253, 253, 117);
     width: 250px;
     text-align: left;
 }
 
 #row-uni {
-    background-color: rgb(78, 224, 78);
+    background-color: rgb(117, 255, 117);
     width: 250px;
     text-align: left;
 }
@@ -38,6 +38,10 @@ body {
 th, tr {
     width: 250px;
     text-align: left;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 #task-list-container {
