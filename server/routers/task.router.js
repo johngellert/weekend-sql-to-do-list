@@ -6,7 +6,7 @@ router.use(bodyParser.urlencoded({extended: true})); // need to handle data from
 
 
 router.get('/', (req, res) => {
-    pool.query('SELECT * FROM "todo" ORDER BY "id";').
+    pool.query(`SELECT * FROM "todo" ORDER BY "rank";`).
     then((result) => {
         res.send(result.rows);
     }).catch((error) => {
