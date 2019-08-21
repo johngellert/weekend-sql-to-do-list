@@ -6,7 +6,7 @@ router.use(bodyParser.urlencoded({extended: true})); // need to handle data from
 
 
 router.get('/', (req, res) => {
-    pool.query(`SELECT * FROM "todo" ORDER BY "rank";`).
+    pool.query(`SELECT * FROM "todo" ORDER BY "id";`).
     then((result) => {
         res.send(result.rows);
     }).catch((error) => {
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    pool.query('UPDATE "todo" SET "is_complete"=true WHERE "id"=$1;', [req.params.id]).
+    pool.query('UPDATE "todo" SET "is_complete"=$1 WHERE "id"=$2;', [true, req.params.id]).
     then(() => {
         res.sendStatus(200); // send status ok
     }).catch((error) => {

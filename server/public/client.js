@@ -20,7 +20,6 @@ function getTodoList() {
                     <tr id="row-ui"> 
                         <td>${task.task}</td>
                         <td>${task.priority}</td>
-                        <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                         <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                     </tr>
                 `);
@@ -31,7 +30,6 @@ function getTodoList() {
                 <tr id="row-nui"> 
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
-                    <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
@@ -41,7 +39,6 @@ function getTodoList() {
                 <tr id="row-uni"> 
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
-                    <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
@@ -51,7 +48,6 @@ function getTodoList() {
                 <tr id="row-nuni"> 
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
-                    <td><button class="complete-button" data-id="${task.id}">Complete</button></td>
                     <td><button class="delete-button" data-id="${task.id}">Delete</button></td>
                 </tr>
                 `);
@@ -75,12 +71,13 @@ function handleClickAddTask() {
     });
 }
 
-function handleClickCompleteTask() {
+function handleClickCompleteTask(value) {
     const id = ($(this).data().id);
 
     $.ajax({
         method: 'PUT',
-        url: `/tasks/${id}`
+        url: `/tasks/${id}`,
+        data: value
     }).then(() => {
         getTodoList();
     });
